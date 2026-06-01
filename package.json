@@ -1,0 +1,61 @@
+{
+  "name": "@yaguar/agenda",
+  "version": "0.1.0",
+  "description": "Yaguar Agenda — SDK framework-agnostic: eventos, tarefas, filtros, visões (dia/semana/mês/kanban), provider de calendário e geração de links Yaguar Meet.",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "Yaguar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaioRutka/yaguar-agenda-sdk.git"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./shared": {
+      "types": "./dist/shared/index.d.ts",
+      "import": "./dist/shared/index.js",
+      "require": "./dist/shared/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "prepare": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "prepack": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit --strict",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^2.1.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  },
+  "keywords": [
+    "agenda",
+    "calendar",
+    "tasks",
+    "kanban",
+    "scheduling",
+    "sdk"
+  ]
+}
