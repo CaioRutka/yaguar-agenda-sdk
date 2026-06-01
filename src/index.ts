@@ -10,6 +10,7 @@
 export * from "./models/event.model";
 export * from "./models/task.model";
 export * from "./models/view.model";
+export * from "./models/user.model";
 
 // Utils
 export * from "./utils/date.utils";
