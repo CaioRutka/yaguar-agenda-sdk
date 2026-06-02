@@ -26,6 +26,8 @@ export interface CreateTaskInput {
   status?: TaskStatus;
   priority?: TaskPriority;
   linkedEventId?: string;
+  /** When true, a calendar block is created at dueDate and linked via linkedEventId. */
+  showInAgenda?: boolean;
 }
 
 export type UpdateTaskInput = Partial<Omit<Task, "id">>;
